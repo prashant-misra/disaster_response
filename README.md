@@ -41,7 +41,7 @@ train_classifier.py: It load the data from database and tokenize,lemmatize the t
 
 run.py: It contain code for the web app. It recieves the text data from user to get it classified according to need.
 
-This Project contains two csv filrs:
+This Project contains two csv files:
 
 Disaster_messages.csv: It contain the Disater messages provided by Figure Eight.
 
