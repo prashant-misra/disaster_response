@@ -7,7 +7,7 @@ After a disaster, there are a number of different problems that may arise. Diffe
 
 I have used basic Pipeline skills to process and distinguish texts received from a disaster spot. Here I have used data provided by Figure Eight and build an model for an App that classifies text messages during need of hour to proper place.
 
-# License (Added to improve readibilty
+# License (Added to improve readibilty)
 This app was completed as part of the Udacity Data Scientist Nanodegree. Code templates and data were provided by Udacity. The data was originally sourced by Udacity from Figure Eight.
 
 
