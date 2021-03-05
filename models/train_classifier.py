@@ -99,7 +99,7 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
-     ''' Prepare and Display classification report'''
+    ''' Prepare and Display classification report'''
     Y_pred = model.predict(X_test)
     
     for i in range(len(category_names)):
@@ -108,8 +108,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 def save_model(model, model_filepath):
         '''Save model as a pickle file'''
-
-    pickle.dump(model, open(model_filepath, "wb"))
+        pickle.dump(model, open(model_filepath, "wb"))
 
 
 def main():

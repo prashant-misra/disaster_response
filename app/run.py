@@ -43,6 +43,19 @@ def index():
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
     
+
+    # Show distribution of different message categories
+    category_names = df.iloc[:, 4:].columns
+    cnt = df.iloc[:, 4:] != 0
+    category_count = cnt.sum().values
+    
+    
+    # Show count of top 5 categories
+    sum_categories = df.iloc[:, 4:].sum()
+    topfv_categories_count = sum_categories.sort_values(ascending=False)[1:6]
+    topfv_categories_names = list(topfv_categories_count.index)
+    
+    
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
     graphs = [
@@ -61,6 +74,45 @@ def index():
                 },
                 'xaxis': {
                     'title': "Genre"
+                }
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=category_names,
+                    y=category_count,
+                    marker = dict(color='green')
+
+                )
+            ],
+
+            'layout': {
+                'title': 'Distribution of the Message Categories',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Categories"
+                }
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=topfv_categories_names,
+                    y=topfv_categories_count,
+                    marker = dict(color='grey')
+                )
+            ],
+
+            'layout': {
+                'title': 'Top 5 Categories',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Categories"
                 }
             }
         }
@@ -93,7 +145,7 @@ def go():
 
 
 def main():
-    app.run(host='127.0.0.1', port=3001, debug=True)
+    app.run(host='0.0.0.0', port=3001, debug=True)
 
 
 if __name__ == '__main__':
